@@ -1,0 +1,441 @@
+@import url('https://fonts.cdnfonts.com/css/lufga'); /* Importa a fonte externa Lufga */
+/* --- Configurações Gerais --- */
+
+:root {
+    --primary: #b30000;    /* Variável: vermelho principal da Teto */
+    --dark: #1a1a1a;       /* Variável: cinza escuro para fundos e textos */
+    --pink-dark: #8a0000;  /* Variável: bordô para detalhes e botões */
+} 
+
+* {
+    margin: 0;             /* Zera margens externas padrão de navegadores */
+    padding: 0;            /* Zera preenchimentos internos padrão */
+    box-sizing: border-box; /* Borda e padding não somam na largura total */
+}
+
+body {
+    font-family: 'Lufga', sans-serif; /* Aplica a fonte personalizada */
+    background-color: #2d2d2d;        /* Cor de fundo cinza grafite */
+    color: #e0e0e0;                   /* Cor do texto em cinza muito claro */
+    line-height: 1.6;                 /* Altura entre linhas para conforto visual */
+}
+
+/* --- Cabeçalho e Logo Estilizada --- */
+header {
+    background-color: #1a1a1a;            /* Fundo escuro do topo */
+    color: white;                         /* Texto em branco */
+    padding: 2rem;                        /* Espaçamento interno de 32px */
+    text-align: center;                   /* Fallback para centralizar texto */
+    display: flex;                        /* Habilita o sistema Flexbox */
+    justify-content: space-between;       /* Logo à esquerda, menu à direita */
+    align-items: center;                  /* Alinha itens ao centro vertical */
+    border-bottom: 4px solid #b30000;     /* Linha vermelha no fundo do header */
+    box-shadow: 0 4px 15px rgba(179, 0, 0, 0.3); /* Brilho vermelho sutil na base */
+}
+
+.logo-img {
+    width: 120px;                         /* Tamanho horizontal da imagem logo */
+    height: auto;                         /* Altura calculada proporcionalmente */
+    margin-right: 1rem;                   /* Espaço entre imagem e texto */
+}
+
+.logo-text {
+    display: flex;                        /* Contêiner flexível para o logo */
+    align-items: center;                  /* Alinha texto e imagem verticalmente */
+    justify-content: flex-start;          /* Alinha conteúdo à esquerda */
+    font-family: 'Lufga', sans-serif;     /* Fonte Lufga */
+    font-weight: 900;                     /* Peso extra negrito (Black) */
+    font-size: 3.5rem;                    /* Tamanho gigante da fonte */
+    text-transform: uppercase;            /* Texto em maiúsculo */
+    color: #e0e0e0;                       /* Cor do texto do logo */
+}
+
+/* --- Texto com brilho vermelho --- */
+.red-text {
+    color: #b30000;                       /* Define a cor do texto como vermelho */
+    text-shadow: 0 0 15px rgba(179, 0, 0, 0.8), 0 0 5px white; /* Adiciona brilho neon e um contorno branco suave */
+}
+
+.slogan {
+    font-size: 1rem;                      /* Tamanho de fonte padrão para o slogan */
+    color: #888;                          /* Cor cinza média para o slogan */
+    margin-top: -5px;                     /* Puxa o slogan um pouco para cima do logo */
+    font-style: italic;                   /* Deixa o texto em itálico */
+}
+
+/* --- Navegação --- */
+nav ul {
+    list-style: none;                     /* Remove os marcadores de lista (bolinhas) */
+    display: flex;                        /* Habilita o Flexbox para alinhar itens horizontalmente */
+    justify-content: center;              /* Centraliza os itens da lista */
+    gap: 25px;                            /* Define o espaçamento entre cada item do menu */
+    margin-top: 0;                        /* Remove qualquer margem superior indesejada */
+}
+
+/* Botão Hub Fixo */
+.btn-hub-fixed {
+    position: fixed; /* Fixa o botão na tela, independente do scroll */
+    bottom: 30px; /* Distância de 30px do fundo */
+    right: 30px; /* Distância de 30px da direita */
+    width: 65px; /* Largura do botão */
+    height: 65px; /* Altura do botão */
+    background-color: var(--primary); /* Cor de fundo vermelha */
+    color: white; /* Cor do ícone/texto */
+    border-radius: 15px; /* Cantos arredondados */
+    display: flex; /* Habilita flexbox para centralizar conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-decoration: none; /* Remove sublinhado do link */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra externa pesada */
+    z-index: 10000; /* Garante que fique na frente de tudo */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transição suave com efeito 'elástico' */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Borda branca transparente */
+}
+
+.btn-hub-fixed img {
+    width: 100%; /* Imagem ocupa toda largura do botão */
+    height: 100%; /* Imagem ocupa toda altura do botão */
+    object-fit: contain; /* Ajusta imagem sem cortar */
+    padding: 5px; /* Espaço interno para a imagem não encostar na borda */
+}
+
+.btn-hub-fixed:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% no hover */
+    background-color: #ffffff; /* Muda fundo para branco no hover */
+    color: var(--primary); /* Muda a cor para vermelho no hover */
+}
+
+nav a {
+    color: #e0e0e0;                       /* Links em cinza claro */
+    text-decoration: none;                /* Sem sublinhado */
+    font-weight: 400;                     /* Peso normal */
+    text-transform: uppercase;            /* Maiúsculo */
+    font-size: 1.5rem;                    /* Tamanho do texto do menu */
+    transition: 0.3s;                     /* Suaviza mudanças de cor e fundo */
+    padding: 5px 10px;                    /* Área de clique interna */
+}
+
+nav a:hover {
+    color: #b30000;                       /* Link fica vermelho no hover */
+    background-color: rgba(179, 0, 0, 0.1); /* Fundo vermelho quase invisível */
+    border-radius: 5px;                   /* Cantos redondos no fundo do hover */
+}
+
+/* --- Seções --- */
+.container {
+    padding: 4rem 10%;                    /* Espaço interno generoso */
+    text-align: center;                   /* Centraliza conteúdo textual */
+}
+
+h2 {
+    font-family: 'Lufga', sans-serif;   /* Fonte Lufga para os títulos das seções */
+    font-weight: 900;                     /* Lufga Black */
+    color: #b30000;                       /* Títulos em vermelho */
+    font-size: 2.8rem;                    /* Tamanho grande para títulos h2 */
+    margin-bottom: 2.5rem;                /* Espaço abaixo do título */
+    text-transform: uppercase;            /* Títulos em maiúsculo */
+    border-bottom: 2px solid #3d3d3d;     /* Linha cinza fina embaixo do título */
+    display: inline-block;                /* Faz a borda ter apenas a largura do texto */
+    padding-bottom: 10px;                 /* Espaço entre o texto e a linha de baixo */
+}
+
+/* --- Card de fundo --- */
+.sobre-content {
+    max-width: 2000px;                    /* Limite máximo de largura */
+    height: 400px;                        /* Altura fixa da seção sobre */
+    margin: 0 auto;                       /* Centralização horizontal */
+    text-align: justify;                  /* Distribui o texto para alinhar nas duas margens */
+    background-color: #3d3d3d;            /* Fundo cinza um pouco mais claro que o body */
+    padding: 2rem;                        /* Espaçamento interno de 32px */
+    border-radius: 15px;                  /* Arredonda os cantos do bloco */
+    border-left: 5px solid #b30000;       /* Barra vermelha grossa na lateral esquerda */
+}
+
+.sobre-content p {
+    color: #e0e0e0;                       /* Texto em cinza claro */
+    font-weight: normal;                  /* Fonte com peso comum */
+    font-size: 1.7rem;                    /* Fonte grande para leitura fácil */
+}
+
+/* --- Sabores (Grid) --- */
+.cards-grid {
+    display: grid;                        /* Ativa o sistema de grade */
+    /* Cria colunas automáticas de no mínimo 220px que ocupam o espaço disponível */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Grade responsiva */
+    gap: 25px;                            /* Espaço entre os cards */
+}
+
+.card {
+    background: #3d3d3d;                  /* Cor de fundo do cartão */
+    padding: 4px;                      /* Espaçamento interno de 24px */
+    border-radius: 15px;                  /* Arredonda os cantos */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra preta discreta */
+    transition: transform 0.3s, box-shadow 0.3s; /* Suaviza a animação de hover */
+    border: 1px solid #4a4a4a;            /* Borda cinza fina */
+}
+
+.card:hover {
+    transform: translateY(-8px);          /* Levanta o cartão em 8px ao passar o mouse */
+    box-shadow: 0 8px 25px rgba(179, 0, 0, 0.4); /* Aumenta e avermelha a sombra */
+    border-color: #b30000;                /* Muda a borda para vermelho */
+}
+
+.card img {
+    width: 200px;                         /* Largura da imagem do sorvete */
+    border-radius: 15px;                  /* Arredonda os cantos da imagem */
+    border: 3px solid #b30000;            /* Borda vermelha na imagem */
+    transition: 0.5s;                     /* Suaviza mudanças na imagem */
+    height: 250px;                        /* Altura fixa para alinhar os cards */
+    object-fit: cover;                    /* Corta a imagem para preencher sem esticar */
+}
+
+.card:hover img {
+    filter: grayscale(0%);                /* Garante que a imagem esteja colorida no hover */
+}
+
+.card h3 {
+    color: #b30000;                       /* Nome do sabor em vermelho */
+    margin-bottom: 0.5rem;                /* Espaço abaixo do nome */
+    font-family: 'Lufga', sans-serif;
+    font-weight: 900;                     /* Lufga Black */
+}
+
+/* --- Galeria --- */
+.galeria-grid {
+    display: grid;                        /* Sistema de grade para fotos */
+    /* Colunas de no mínimo 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;                            /* Espaço entre as fotos */
+}
+
+.galeria-grid figure {
+    position: relative;                   /* Necessário para posicionar o figcaption em cima */
+    overflow: hidden;                     /* Esconde a imagem se ela crescer além do limite */
+    border-radius: 10px;                  /* Arredonda o container da foto */
+}
+
+.galeria-grid img {
+    width: 350px;                         /* Largura da imagem da galeria */
+    height: 250px;                        /* Altura da imagem da galeria */
+    object-fit: cover;                    /* Ajusta a foto ao quadrado definido */
+    border-radius: 15px;                  /* Arredonda a foto */
+    border: 3px solid #b30000;            /* Borda vermelha */
+    transition: 0.5s;                     /* Suaviza o zoom no hover */
+    cursor: pointer;                      /* Mostra a "mãozinha" do mouse */
+}
+
+.galeria-grid figure:hover img {
+    transform: scale(1.1);                /* Dá um zoom de 10% na foto ao passar o mouse */
+    border-color: #b30000;                /* Reforça a cor da borda */
+}
+
+figcaption {
+    position: absolute;                   /* Posiciona o texto de forma livre sobre a imagem */
+    bottom: 0;                            /* Cola o texto na parte de baixo da imagem */
+    background: rgba(26, 26, 26, 0.8);    /* Define um fundo preto com 80% de transparência */
+    width: 100%;                          /* Garante que a legenda ocupe toda a largura */
+    color: white;                         /* Define a cor da letra como branca */
+    padding: 10px;                        /* Adiciona enchimento interno para o texto não encostar nas bordas */
+    font-size: 0.8rem;                    /* Define um tamanho de fonte menor para a legenda */
+    opacity: 0;                           /* Deixa o texto invisível por padrão */
+    transition: 0.3s;                     /* Define que a transição de visibilidade durará 0.3 segundos */
+}
+
+.galeria-grid figure:hover figcaption {
+    opacity: 1;                           /* Torna o texto visível quando o mouse passa sobre a imagem */
+}
+
+/* --- Vídeo --- */
+.video-wrapper {
+    position: relative;                   /* Base para posicionar o iframe fixo */
+    padding-bottom: 56.25%;               /* Truque para manter proporção 16:9 (YouTube) */
+    height: 0;                            /* Altura base zero, controlada pelo padding */
+    max-width: 800px;                     /* Largura máxima do vídeo */
+    margin: 0 auto;                       /* Centraliza o vídeo */
+    border: 4px solid #3d3d3d;            /* Moldura cinza grossa */
+    border-radius: 15px;                  /* Arredonda a moldura */
+    overflow: hidden;                     /* Garante que o vídeo não saia da borda redonda */
+}
+
+.video-wrapper iframe {
+    position: absolute;                   /* Fixa o vídeo dentro do wrapper */
+    top: 0;                               /* No topo */
+    left: 0;                              /* Na esquerda */
+    width: 100%;                          /* Ocupa todo o espaço do container */
+    height: 100%;                         /* Ocupa toda a altura do container */
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #1a1a1a;            /* Cor escura para o rodapé */
+    color: #888;                          /* Texto cinza para créditos */
+    text-align: center;                   /* Centraliza tudo */
+    padding: 2rem;                        /* Espaçamento interno */
+    margin-top: 2rem;                     /* Espaço acima do rodapé */
+    border-top: 2px solid #3d3d3d;        /* Linha divisória no topo */
+}
+
+.redes-sociais {
+    margin-top: 10px;                     /* Espaço acima dos links sociais */
+}
+
+.redes-sociais a {
+    color: #b30000;                       /* Links das redes em vermelho */
+    text-decoration: none;                /* Sem sublinhado */
+    margin: 0 10px;                       /* Espaço entre os links */
+    font-weight: bold;                    /* Links em negrito */
+    font-size: 0.9rem;                    /* Tamanho do link */
+}
+
+.redes-sociais a:hover {
+    color: white;                         /* Fica branco ao passar o mouse */
+}
+
+/* --- Animação da Teto --- */
+footer {
+    position: relative;                   /* Torna o rodapé a base para elementos posicionados (como a animação) */
+    overflow: hidden;                     /* Esconde qualquer elemento que tente sair dos limites do rodapé */
+    height: 150px;                        /* Define uma altura fixa para acomodar a animação de pulo */
+    display: flex;                        /* Ativa o Flexbox para alinhar textos */
+    flex-direction: column;               /* Alinha os itens do rodapé um embaixo do outro */
+    justify-content: center;              /* Centraliza o conteúdo verticalmente */
+    align-items: center;                  /* Centraliza o conteúdo horizontalmente */
+}
+
+.teto-footer {
+    position: absolute;                   /* Permite que a imagem se mova livremente pelo rodapé */
+    bottom: 10px;                         /* Posiciona a imagem a 10px do fundo (chão) */
+    width: 60px;                          /* Define a largura da imagem da personagem */
+    height: auto;                         /* Ajusta a altura proporcionalmente */
+    image-rendering: pixelated;           /* Mantém a nitidez dos pixels em artes de baixa resolução */
+    animation: 
+        andar 15s linear infinite,        /* Executa a caminhada por 15 segundos repetidamente */
+        pular 0.6s ease-in-out infinite alternate; /* Faz a personagem quicar continuamente */
+}
+
+@keyframes andar {
+    0% { left: 0; transform: scaleX(1); } /* Começa na extrema esquerda olhando para a frente */
+    45% { transform: scaleX(1); }         /* Continua olhando para a direita até quase o fim */
+    50% { left: calc(100% - 60px); transform: scaleX(-1); } /* No meio do tempo, vira para a esquerda */
+    95% { transform: scaleX(-1); }        /* Mantém a direção de volta */
+    100% { left: 0; transform: scaleX(1); } /* Retorna ao ponto inicial e vira novamente */
+}
+
+@keyframes pular {
+    from { bottom: -9px; }                /* Ponto mais baixo do pulo */
+    to { bottom: 50px; }                  /* Ponto mais alto do pulo */
+}
+
+/* --- Código do Douglas (Modal) --- */
+.fullscreen-btn {
+    display: block;                       /* Faz o botão ser um bloco inteiro */
+    margin: 10px auto;                    /* Centraliza o botão */
+    background: var(--pink-dark);         /* Usa a cor bordô definida no início */
+    color: white;                         /* Texto branco */
+    padding: 8px 15px;                    /* Espaço dentro do botão */
+    border-radius: 12px;                  /* Arredonda o botão */
+    border: 3px solid var(--dark);        /* Borda escura no botão */
+    font-weight: bold;                    /* Texto em negrito */
+    cursor: pointer;                      /* Cursor de clique */
+    transition: 0.3s;                     /* Suaviza o hover */
+}
+
+.fullscreen-btn:hover {
+    transform: scale(1.1);                /* Aumenta o botão um pouco no hover */
+    background: var(--primary);           /* Muda para o vermelho vibrante */
+}
+
+.modal-overlay {
+    display: none;                        /* Começa invisível até ser ativado via JS */
+    position: fixed;                      /* Fica fixo na tela mesmo rolando a página */
+    top: 0; left: 0;
+    width: 100%; height: 100%;            /* Ocupa a tela inteira */
+    background: rgba(43, 45, 66, 0.95);   /* Fundo escuro quase opaco */
+    z-index: 9999;                        /* Garante que fique acima de TODOS os elementos */
+    justify-content: center;              /* Centraliza a imagem horizontalmente */
+    align-items: center;                  /* Centraliza a imagem verticalmente */
+}
+
+#img-modal {
+    max-width: 90%;                       /* Imagem não ultrapassa 90% da largura da tela */
+    max-height: 80%;                      /* Imagem não ultrapassa 80% da altura da tela */
+    border: 6px solid var(--pink-dark);   /* Moldura bordô na foto ampliada */
+    border-radius: 20px;                  /* Cantos bem arredondados */
+    animation: surgindo 0.4s ease-out;    /* Aplica a animação de aparecer */
+}
+
+@keyframes surgindo {
+    from { transform: scale(0.5); opacity: 0; } /* Começa pequena e transparente */
+    to { transform: scale(1); opacity: 1; }     /* Termina no tamanho real e visível */
+}
+
+/* --- Responsividade (Celular) --- */
+@media (max-width: 768px) {               /* Configurações apenas para telas menores que 768px */
+    header {
+        flex-direction: row;              /* Mantém lado a lado */
+        flex-wrap: wrap;                  /* Permite quebrar linha se não couber */
+        justify-content: center;          /* Centraliza os itens no mobile */
+        padding: 1rem;
+    }
+
+    .logo-img {
+        width: 60px;                      /* Reduz o tamanho do logo no celular */
+        margin-right: 10px;
+    }
+
+    .logo-text {
+        font-size: 1.6rem;                /* Diminui a fonte do título no celular */
+    }
+
+    nav {
+        width: 100%;                      /* Menu ocupa a largura toda */
+        margin-top: 15px;                 /* Espaço entre o logo e o menu */
+    }
+
+    nav ul {
+        flex-direction: row;              /* Mantém itens em linha */
+        justify-content: center;          /* Centraliza links */
+        flex-wrap: wrap;                  /* Quebra linha se forem muitos links */
+        gap: 10px;                        /* Diminui o espaço entre links */
+    }
+
+    .container {
+        padding: 2rem 5%;                 /* Reduz o espaçamento geral para aproveitar melhor a tela */
+    }
+
+    h2 {
+        font-size: 2rem;                  /* Diminui o título para ocupar menos espaço vertical */
+        margin-bottom: 1.5rem;            /* Aproxima o conteúdo do título */
+    }
+
+    .sobre-content {
+        height: auto;                     /* Remove a altura fixa de 400px para não cortar texto */
+        padding: 1.5rem;
+        text-align: left;                 /* Texto alinhado à esquerda facilita a leitura no celular */
+    }
+
+    .sobre-content p {
+        font-size: 1.1rem;                /* Diminui a letra para caber melhor na tela pequena */
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mostra 2 colunas de cards em vez de 1 */
+        gap: 15px;
+    }
+
+    .card img {
+        width: 100%;                      /* Imagem ocupa toda a largura do card */
+        aspect-ratio: 1 / 1;              /* Força a imagem a ser quadrada (1:1) */
+        object-fit: cover;                /* Garante que a imagem preencha o espaço sem distorcer */
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mostra 2 colunas de fotos na galeria */
+        gap: 15px;
+    }
+
+    .galeria-grid img {
+        width: 100%;                      /* Imagem da galeria ocupa o espaço todo */
+        height: auto;                     /* Altura proporcional */
+    }
+}

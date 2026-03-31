@@ -1,0 +1,443 @@
+@import url('https://fonts.cdnfonts.com/css/lufga'); /* Importa a fonte Lufga */
+
+:root {
+    --primary: #E60012;    /* Variável: Vermelho Teto oficial */
+    --dark: #1a1a1a;       /* Variável: Cinza quase preto */
+    --bg-body: #2d2d2d;    /* Variável: Fundo grafite principal */
+    --bg-card: #262626;    /* Variável: Fundo escuro para cartões */
+    --accent: #FFD700;     /* Variável: Amarelo/Ouro para realces */
+    --text-light: #f4f4f4; /* Variável: Texto claro */
+} 
+
+* {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimentos padrão */
+    box-sizing: border-box; /* Inclui bordas no cálculo de largura/altura */
+}
+
+body { 
+    background-color: var(--bg-body); /* Aplica cor de fundo grafite */
+    font-family: 'Lufga', sans-serif; /* Define fonte padrão */
+    color: var(--text-light); /* Define cor do texto padrão */
+    line-height: 1.6; /* Espaçamento entre linhas confortável */
+}
+
+header {
+    background-color: var(--dark); /* Fundo escuro no topo */
+    display: flex; /* Organiza logo e menu horizontalmente */
+    justify-content: space-between; /* Espaçamento máximo entre os itens */
+    padding: 10px 40px; /* Espaço interno superior/inferior e lateral */
+    align-items: center; /* Alinha itens no centro vertical */
+    border-bottom: 4px solid var(--primary); /* Linha vermelha na base */
+    box-shadow: 0 4px 15px rgba(230, 0, 18, 0.3); /* Sombra avermelhada */
+    position: sticky; /* Mantém o cabeçalho visível ao rolar */
+    top: 0; /* Cola no topo da página */
+    z-index: 1000; /* Garante que fique sobre outros conteúdos */
+}
+
+header img {
+    width: 80px; /* Largura da imagem do header */
+    height: 80px; /* Altura da imagem do header */
+    object-fit: cover; /* Mantém proporção da imagem sem distorcer */
+    border: 2px solid var(--primary); /* Borda vermelha fina */
+    cursor: pointer; /* Cursor de mão ao passar por cima */
+    transition: border-color 0.3s ease; /* Transição suave de cor na borda */
+}
+
+header img:hover {
+    border-color: var(--accent); /* Borda muda para amarelo no hover */
+}
+
+.menu {
+    display: flex; /* Itens da lista lado a lado */
+    list-style: none; /* Remove bolinhas da lista */
+    gap: 25px; /* Espaço entre os links do menu */
+}
+
+/* Botão Hub Fixo */
+.btn-hub-fixed {
+    position: fixed; /* Fixa o botão na janela */
+    bottom: 30px; /* Distância do fundo */
+    right: 30px; /* Distância da direita */
+    width: 60px; /* Largura fixa */
+    height: 60px; /* Altura fixa */
+    background-color: var(--primary); /* Fundo vermelho */
+    color: white; /* Cor branca para o ícone */
+    border-radius: 12px; /* Cantos arredondados */
+    display: flex; /* Centraliza conteúdo interno */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-decoration: none; /* Remove sublinhado */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra forte */
+    z-index: 10000; /* Sempre no topo */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação elástica */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+}
+
+.btn-hub-fixed img {
+    width: 100%; /* Imagem preenche o botão */
+    height: 100%; /* Imagem preenche o botão */
+    object-fit: contain; /* Mantém ícone centralizado */
+    padding: 5px; /* Margem interna para o ícone */
+}
+
+.btn-hub-fixed:hover {
+    transform: scale(1.1); /* Aumenta levemente no hover */
+    background-color: var(--accent); /* Fundo fica amarelo no hover */
+    color: var(--dark); /* Ícone fica escuro no hover */
+}
+
+.menu li a {
+    text-decoration: none; /* Remove sublinhado */
+    color: white; /* Links em branco */
+    font-weight: 400; /* Peso da fonte regular */
+    font-size: 18px; /* Tamanho da fonte */
+    text-transform: uppercase; /* Letras maiúsculas */
+    letter-spacing: 1px; /* Espaço entre letras */
+    transition: all 0.3s ease; /* Transição suave de estados */
+    padding: 5px 10px; /* Área de clique maior */
+}
+
+.menu li a:hover {
+    color: var(--primary); /* Link fica vermelho no hover */
+    border-bottom: 2px solid var(--accent); /* Linha amarela abaixo no hover */
+}
+
+.container {
+    max-width: 1000px; /* Limita a largura do conteúdo central */
+    margin: 40px auto; /* Centraliza horizontalmente e dá margem vertical */
+    padding: 0 20px; /* Espaço nas laterais para não encostar na tela */
+}
+
+h1, h2, h3 {
+    font-weight: 900; /* Lufga Black */
+    text-transform: uppercase; /* Títulos em maiúsculo */
+    letter-spacing: 2px; /* Espaçamento maior entre letras */
+}
+
+h2 {
+    color: var(--primary); /* Títulos H2 em vermelho */
+    text-shadow: 0 0 10px rgba(230, 0, 18, 0.4); /* Brilho vermelho suave */
+    font-size: 2.5rem; /* Tamanho grande */
+    text-align: center; /* Centralizado */
+    margin-bottom: 30px; /* Espaço abaixo */
+}
+
+/* Detalhe embaixo do título igual ao site de Jogos */
+h2::after {
+    content: '04'; /* Adiciona o texto decorativo 04 */
+    display: block; /* Ocupa sua própria linha */
+    font-size: 0.8rem; /* Pequeno */
+    color: var(--primary); /* Vermelho */
+    width: 60px; /* Largura da linha */
+    height: 4px; /* Espessura da linha */
+    background-color: var(--primary); /* Cor da linha */
+    margin: 10px auto 0; /* Centraliza abaixo do H2 */
+    border-radius: 2px; /* Pontas levemente arredondadas */
+}
+
+.historia {
+    background-color: rgba(38, 38, 38, 0.9); /* Fundo cinza quase opaco */
+    padding: 40px; /* Espaçamento interno grande */
+    border-radius: 20px; /* Cantos redondos */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra profunda */
+    border-left: 8px solid var(--primary); /* Estilo da Sorveteria */
+}
+
+.historia p {
+    margin-bottom: 20px; /* Espaço entre parágrafos */
+    font-size: 1.1rem; /* Tamanho da letra */
+    text-align: justify; /* Alinha o texto nos dois lados */
+    color: #ccc; /* Cinza médio */
+}
+.curiosidades-grid {
+    display: grid; /* Ativa grade flexível */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas que se ajustam sozinhas */
+    gap: 20px; /* Espaço entre os itens */
+    margin: 30px 0; /* Margem vertical */
+}
+
+.info-box {
+    background: var(--bg-card); /* Fundo do card */
+    padding: 25px; /* Espaçamento interno */
+    border-radius: 15px; /* Cantos arredondados */
+    border-top: 6px solid var(--primary); /* Faixa vermelha no topo */
+    border-bottom: 2px solid #444; /* Linha sutil na base */
+    /* Animação de revelação ao rolar */
+    animation: reveal linear both; /* Aplica animação de surgimento */
+    animation-timeline: view(); /* Controla animação conforme o scroll passa */
+    animation-range: entry 10% cover 30%; /* Define em que ponto da rolagem anima */
+
+    color: var(--text-light); /* Texto claro */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra leve */
+    transition: all 0.3s ease; /* Transição para efeitos de hover */
+    position: relative; /* Base para o número '0401' absoluto */
+    overflow: hidden; /* Garante que nada saia do card */
+}
+
+
+.info-box:hover {
+    transform: translateY(-5px); /* Sobe um pouco no hover */
+    box-shadow: 0 12px 25px rgba(230, 0, 18, 0.4); /* Sombra vermelha no hover */
+    border-bottom-color: var(--accent); /* Base fica amarela no hover */
+}
+
+.info-box h3 {
+    color: var(--primary); /* Título interno em vermelho */
+    margin-bottom: 12px; /* Espaço abaixo */
+    font-size: 1.4rem; /* Tamanho médio */
+    display: flex; /* Organiza ícone e texto */
+    align-items: center; /* Alinha ícone/texto horizontalmente */
+    gap: 10px; /* Espaço entre ícone e texto */
+    font-weight: 900; /* Super negrito */
+}
+
+.info-box::after {
+    content: '0401'; /* Adiciona data de aniversário decorativa */
+    position: absolute; /* Fixa no fundo do card */
+    bottom: -10px; /* Desloca para fora na base */
+    right: 5px; /* Alinha à direita */
+    font-size: 2rem; /* Tamanho grande */
+    color: rgba(230, 0, 18, 0.1); /* Vermelho muito transparente */
+    font-weight: 900; /* Super negrito */
+}
+
+.fast-facts {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--bg-card) 100%); /* Gradiente de fundo escuro */
+    color: #FFFFFF; /* Texto branco puro */
+    padding: 35px; /* Espaçamento interno */
+    border-radius: 20px; /* Cantos arredondados */
+    margin: 40px 0; /* Margem vertical */
+    border: 3px solid var(--primary); /* Borda vermelha forte */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra leve */
+    /* Animação de revelação ao rolar */
+    animation: reveal linear both; /* Mesma animação de scroll */
+    animation-timeline: view(); /* Controla pelo scroll */
+    animation-range: entry 10% cover 30%; /* Alcance da animação */
+
+    position: relative; /* Para organização interna */
+}
+
+
+.fast-facts h3 {
+    color: var(--accent); /* Título em amarelo */
+    text-transform: uppercase; /* Maiúsculo */
+    margin-bottom: 20px; /* Espaço abaixo */
+    font-size: 1.6rem; /* Tamanho médio-grande */
+    letter-spacing: 2px; /* Espaçamento de letras */
+    border-bottom: 2px solid var(--primary); /* Linha vermelha abaixo */
+    display: inline-block; /* Linha só do tamanho do texto */
+    padding-bottom: 5px; /* Espaço até a linha */
+}
+
+
+.fast-facts ul {
+    list-style: none; /* Sem marcadores padrão */
+    padding-left: 10px; /* Recuo para os itens */
+}
+
+.fast-facts li {
+    margin-bottom: 15px; /* Espaço entre itens da lista */
+    font-size: 1.1rem; /* Tamanho da fonte */
+    display: flex; /* Organiza emoji e texto */
+    align-items: center; /* Alinha emoji/texto no centro */
+    gap: 15px; /* Espaço entre emoji e texto */
+}
+
+.fast-facts li::before {
+    font-size: 1.2rem; /* Tamanho dos emojis */
+}
+
+.fast-facts li:nth-child(1)::before {
+    content: '🥖'; /* Ícone de pão para o primeiro item */
+}
+
+.fast-facts li:nth-child(2)::before {
+    content: '🎤'; /* Ícone de microfone para o segundo item */
+}
+
+.fast-facts li:nth-child(3)::before {
+    content: '🔟'; /* Ícone de número para o terceiro item */
+}
+
+
+.fast-facts li strong {
+    color: var(--accent); /* Destaques dentro da lista em amarelo */
+}
+
+blockquote {
+    font-style: italic; /* Texto em itálico */
+    font-size: 1.2rem; /* Letra um pouco maior */
+    background: rgba(0,0,0,0.3); /* Fundo preto transparente */
+    color: #eee; /* Texto quase branco */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Cantos levemente redondos */
+    text-align: center; /* Texto centralizado */
+    border-left: 5px solid var(--primary); /* Barra vermelha à esquerda */
+}
+.video-grid {
+    display: grid; /* Grade para vídeos */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo */
+    gap: 20px; /* Espaço entre cards de vídeo */
+    margin-top: 30px; /* Espaço acima */
+}
+.video-card {
+    background: var(--bg-card); /* Fundo do card de vídeo */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 8px; /* Cantos arredondados */
+    border: 1px solid #444; /* Borda fina discreta */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra moderada */
+}
+.placeholder {
+    height: 200px; /* Altura da área reserva */
+    display: flex; /* Centraliza texto no placeholder */
+    align-items: center; /* Centro vertical */
+    justify-content: center; /* Centro horizontal */
+    border: 2px dashed #ccc; /* Borda tracejada cinza */
+    color: #999; /* Texto cinza claro */
+}
+/* Configuração da Grade de Fotos */
+.galeria-grid {
+    display: grid; /* Grade para galeria */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grade flexível */
+    gap: 20px; /* Espaço entre fotos */
+    margin-top: 30px; /* Espaço acima da galeria */
+}
+
+.fanart-card {
+    background: var(--bg-card); /* Fundo do card da fanart */
+    border: 2px solid #444; /* Borda cinza */
+    border-radius: 12px; /* Cantos arredondados */
+    overflow: hidden; /* Corta a imagem se sair do limite */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+    cursor: pointer; /* Indica clique */
+    position: relative; /* Para rodapé da foto */
+}
+
+.fanart-card:hover {
+    transform: scale(1.03); /* Zoom leve no hover */
+    box-shadow: 0 10px 20px rgba(230, 0, 18, 0.3); /* Sombra vermelha no hover */
+    border-color: var(--primary); /* Borda fica vermelha no hover */
+}
+
+.fanart-card img {
+    width: 100%; /* Largura total do card */
+    height: 300px; /* Altura fixa para manter grade uniforme */
+    display: block; /* Remove espaços vazios na base */
+    object-fit: cover; /* Ajusta imagem sem distorção */
+}
+
+.fanart-info {
+    padding: 10px; /* Espaço interno para o texto do artista */
+    background: #424242; /* Fundo cinza escuro */
+    color: white; /* Texto branco */
+    text-align: center; /* Texto centralizado */
+    font-size: 0.9rem; /* Letra pequena */
+    font-weight: bold; /* Negrito */
+}
+
+.fanart-info span {
+    color: var(--accent); /* Cor do nome do autor em amarelo */
+}
+
+/* --- Rodapé com a Teto Caminhando (Padronizado) --- */
+footer {
+    background-color: var(--dark); /* Fundo escuro */
+    color: #888; /* Texto cinza */
+    text-align: center; /* Centralizado */
+    padding: 2rem; /* Preenchimento generoso */
+    margin-top: 4rem; /* Distância do conteúdo */
+    border-top: 4px solid var(--primary); /* Linha vermelha no topo do rodapé */
+    position: relative; /* Base para animação da Teto */
+    overflow: hidden; /* Corta a Teto se ela sair dos limites */
+    height: 180px; /* Altura fixa para comportar a animação */
+    display: flex; /* Organiza conteúdo em coluna centralizada */
+    flex-direction: column; /* Itens um abaixo do outro */
+    justify-content: center; /* Centro vertical */
+    align-items: center; /* Centro horizontal */
+}
+
+.teto-footer {
+    position: absolute; /* Movimentação livre no rodapé */
+    bottom: 10px; /* Altura do chão */
+    width: 60px; /* Tamanho da sprite */
+    height: auto; /* Proporcional */
+    image-rendering: pixelated; /* Mantém nitidez de pixel art */
+    animation: andar 15s linear infinite, pular 0.6s ease-in-out infinite alternate; /* Aplica caminhada e pulos */
+}
+
+@keyframes andar {
+    0% { left: 0; transform: scaleX(1); } /* Inicia à esquerda olhando para direita */
+    45% { transform: scaleX(1); } /* Mantém olhar até perto da borda */
+    50% { left: calc(100% - 60px); transform: scaleX(-1); } /* Vira para esquerda na borda direita */
+    95% { transform: scaleX(-1); } /* Mantém olhar até perto da borda inicial */
+    100% { left: 0; transform: scaleX(1); } /* Chega no início e vira de novo */
+}
+
+@keyframes pular {
+    from { bottom: 0px; } /* Posição baixa */
+    to { bottom: 40px; } /* Posição alta */
+}
+
+
+/* COLOQUEI ISSO PARA FUNCIONAR EM CELULAR */
+@media (max-width: 768px) {  
+    body {
+        background-attachment: scroll; /* No celular, o fundo rola junto com o dedo para economizar bateria/processamento */
+    }
+
+    header {
+        flex-direction: column; /* Coloca logo em cima e menu embaixo no celular */
+        gap: 15px; /* Espaço entre logo e menu */
+        text-align: center; /* Garante textos centralizados */
+        padding: 15px; /* Reduz o preenchimento lateral */
+    }
+    .menu {
+        gap: 10px; /* Diminui o espaço entre links do menu */
+        flex-wrap: wrap; /* Permite que o menu quebre em várias linhas se necessário */
+        justify-content: center; /* Centraliza os links do menu */
+    }
+    .menu li a {
+        font-size: 16px; /* Diminui a letra dos links para caberem melhor */
+    }
+    .historia h1 {
+        font-size: 1.8rem; /* Reduz o tamanho do título principal da história no mobile */
+        text-align: center; /* Garante que o título esteja centralizado */
+    }
+    .historia {
+        padding: 20px; /* Reduz o preenchimento interno para ganhar mais espaço de tela */
+        border-radius: 15px; /* Deixa os cantos um pouco menos arredondados que no desktop */
+    }
+    .info-box {
+        padding: 25px; /* Ajusta o espaçamento interno do card de informação */
+        border-radius: 12px; /* Define o arredondamento dos cantos dos cards no mobile */
+    }
+    .fast-facts {
+        padding: 25px; /* Ajusta o respiro interno do bloco de fatos rápidos */
+        max-width: 100%; /* Garante que o bloco use toda a largura disponível */
+        margin: 30px 0; /* Define a margem vertical entre este bloco e os vizinhos */
+        border-radius: 15px; /* Arredonda os cantos do bloco de fatos */
+    }
+    .fast-facts h3 {
+        font-size: 1.3rem; /* Diminui o tamanho do título da seção de fatos */
+    }
+    .fast-facts li {
+        font-size: 1rem; /* Ajusta o tamanho da fonte dos itens da lista */
+        margin-bottom: 8px; /* Reduz o espaço entre os itens para economizar altura */
+        align-items: flex-start; /* Alinha o emoji no topo se o texto quebrar linha */
+    }
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    /* Garante que os cards ocupem a largura total no celular para melhor leitura */
+    .curiosidades-grid, .video-grid, .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Configuração da animação de surgimento ao rolar a página */
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(50px); } /* Começa invisível e 50 pixels abaixo */
+    to { opacity: 1; transform: translateY(0); }     /* Termina visível e na sua posição original */
+}

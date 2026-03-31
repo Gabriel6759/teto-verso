@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../img-geral/teto-movel.png" type="image/gif">
+</head>
+    
+<body>
+    <!-- Botão do Carrinho -->
+    <div class="btn-cart-fixed" id="open-cart">
+        🛒
+        <span id="cart-count">0</span>
+    </div>
+
+    <a href="../index.html" class="btn-hub-fixed" title="Voltar ao Hub"><img src="../img-geral/teto-movel.png" alt="Hub"></a>
+    <div class="logo"><img src="../img-geral/logo.png" alt=""> TETO STORE</div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="PC.html">PC</a>
+        <a href="console.html">Console</a>
+    </nav>
+
+    <div class="container">
+    <h2>Jogos para PC</h2>
+    <div class="grid-jogos">
+        
+        <div class="card-jogo">
+            <div class="capa-jogo">
+                <img src="img-jogos/cyber.jpg" alt="Cyberpunk 2077"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">Cyberpunk 2077</h3>
+                <span class="preco">R$ 199,90</span>
+                <button class="btn-comprar" onclick="addToCart('Cyberpunk 2077', 199.90, 'img-jogos/cyber.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/The%20Witcher%203.jpg" alt="The Witcher 3"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">The Witcher 3: Wild Hunt</h3>
+                <span class="preco">R$ 129,90</span>
+                <button class="btn-comprar" onclick="addToCart('The Witcher 3: Wild Hunt', 129.90, 'img-jogos/The%20Witcher%203.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/Hades.jpg" alt="Hades"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">Hades</h3>
+                <span class="preco">R$ 73,99</span>
+                <button class="btn-comprar" onclick="addToCart('Hades', 73.99, 'img-jogos/hades.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/Baldur%27s%20Gate%203.jpg" alt="Baldur's Gate 3"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">Baldur's Gate 3</h3>
+                <span class="preco">R$ 199,90</span>
+                <button class="btn-comprar" onclick="addToCart('Baldur\'s Gate 3', 199.90, 'img-jogos/Baldur%27s%20Gate%203.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/GTA%20V.jpg" alt="GTA V"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">GTA V</h3>
+                <span class="preco">R$ 69,90</span>
+                <button class="btn-comprar" onclick="addToCart('GTA V', 69.90, 'img-jogos/GTA%20V.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/Terraria.jpg" alt="Terraria"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">Terraria</h3>
+                <span class="preco">R$ 32,99</span>
+                <button class="btn-comprar" onclick="addToCart('Terraria', 32.99, 'img-jogos/terraria.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/Counter-Strike%202.jpg" alt="Counter-Strike 2"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">Counter-Strike 2</h3>
+                <span class="preco">GRÁTIS</span>
+                <button class="btn-comprar" onclick="addToCart('Counter-Strike 2', 0.00, 'img-jogos/Counter-Strike%202.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/Valorant.jpg" alt="Valorant"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">Valorant</h3>
+                <span class="preco">GRÁTIS</span>
+                <button class="btn-comprar" onclick="addToCart('Valorant', 0.00, 'img-jogos/valorant.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/Forza%20Horizon%205.jpg" alt="Forza Horizon 5"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">Forza Horizon 5</h3>
+                <span class="preco">R$ 249,90</span>
+                <button class="btn-comprar" onclick="addToCart('Forza Horizon 5', 249.90, 'img-jogos/Forza%20Horizon%205.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/Resident%20Evil%204.jpg" alt="Resident Evil 4"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">Resident Evil 4</h3>
+                <span class="preco">R$ 169,90</span>
+                <button class="btn-comprar" onclick="addToCart('Resident Evil 4', 169.90, 'img-jogos/Resident%20Evil%204.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/starfield.jpg" alt="Starfield"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">Starfield</h3>
+                <span class="preco">R$ 299,90</span>
+                <button class="btn-comprar" onclick="addToCart('Starfield', 299.90, 'img-jogos/starfield.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="card-jogo">
+            <div class="capa-jogo"><img src="img-jogos/League%20of%20Legends.jpg" alt="League of Legends"></div>
+            <div class="info-jogo">
+                <h3 class="titulo-jogo">League of Legends</h3>
+                <span class="preco">GRÁTIS</span>
+                <button class="btn-comprar" onclick="addToCart('League of Legends', 0.00, 'img-jogos/League%20of%20Legends.jpg')">Comprar Agora</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Estrutura da Janelinha do Carrinho -->
+<div class="cart-overlay" id="cart-overlay">
+    <div class="cart-window">
+        <div class="cart-header">
+            <h3>Meu Carrinho</h3>
+            <button class="btn-close-cart" id="close-cart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cart-items-container">
+             <p style="text-align: center; color: #888;">Seu carrinho está vazio.</p>
+        </div>
+
+        <div class="cart-footer">
+            <button class="btn-clear-cart" onclick="clearCart()">Esvaziar Carrinho</button>
+            <span class="total-price">Total: R$ <span id="cart-total">0,00</span></span>
+            <button class="btn-checkout" onclick="checkout()">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 GameStore - Todos os direitos reservados.
+</footer>
+
+<script src="scritp.js"></script>
+</body>
+</html>

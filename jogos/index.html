@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../img-geral/teto-movel.png" type="image/gif">
+</head>
+    
+<body>
+    <!-- Botão do Carrinho -->
+    <div class="btn-cart-fixed" id="open-cart">
+        🛒
+        <span id="cart-count">0</span>
+    </div>
+
+    <a href="../index.html" class="btn-hub-fixed" title="Voltar ao Hub"><img src="../img-geral/teto-movel.png" alt="Hub"></a>
+    <div class="logo"><img src="../img-geral/logo.png" alt=""> TETO STORE</div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="PC.html">PC</a>
+        <a href="console.html">Console</a>
+    </nav>
+<div class="content">
+    <h1>Bem-vindo à TETO STORE!</h1>
+    <p>Encontre os melhores jogos para PC e Console aqui. Aproveite nossas promoções e novidades!</p>
+</div>
+<div class="container">
+    <h2>Promoções da Semana</h2>
+    
+    <div class="banner-destaque">
+        <div class="banner-img">
+            <img src="../img-geral/cross-baguette.png" alt="Jogo em Destaque">
+        </div>
+        <div class="banner-info">
+            <h3>Teto Racing Cross Baguette</h3>
+            <div class="wrapper-preco">
+                <span class="preco-riscado">R$ 9999,90</span>
+                <span class="badge-desconto">-99,98%</span>
+            </div>
+            <span class="preco-grande">R$ 1,90</span>
+            <button class="btn-comprar btn-grande" onclick="addToCart('Teto Racing Cross Baguette', 1.90, '../img-geral/cross-baguette.png')">Comprar Agora</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Estrutura da Janelinha do Carrinho -->
+<div class="cart-overlay" id="cart-overlay">
+    <div class="cart-window">
+        <div class="cart-header">
+            <h3>Meu Carrinho</h3>
+            <button class="btn-close-cart" id="close-cart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cart-items-container">
+             <p style="text-align: center; color: #888;">Seu carrinho está vazio.</p>
+        </div>
+
+        <div class="cart-footer">
+            <button class="btn-clear-cart" onclick="clearCart()">Esvaziar Carrinho</button>
+            <span class="total-price">Total: R$ <span id="cart-total">0,00</span></span>
+            <button class="btn-checkout" onclick="checkout()">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 GameStore - Todos os direitos reservados.
+</footer>
+
+<script src="scritp.js"></script>
+</body>
+</html>

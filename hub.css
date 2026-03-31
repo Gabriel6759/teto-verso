@@ -1,0 +1,225 @@
+@import url('https://fonts.cdnfonts.com/css/lufga'); /* Importação da fonte Lufga */
+/* --- Configurações Gerais --- */
+
+:root {
+    --primary: #b30000;    /* Variável do vermelho principal */
+    --dark: #1a1a1a;       /* Variável do cinza escuro do topo/pé */
+    --pink-dark: #8a0000;  /* Variável do bordô decorativo */
+    --text-light: #e0e0e0; /* Variável da cor do texto padrão */
+    --bg-body: #2d2d2d;    /* Variável da cor de fundo da página */
+    --bg-card: #3d3d3d;    /* Variável da cor de fundo dos cards do hub */
+    --neon-glow: 0 0 15px rgba(179, 0, 0, 0.7); /* Variável para o efeito de brilho neon */
+}
+
+* {
+    margin: 0; /* Zera margens externas */
+    padding: 0; /* Zera preenchimentos internos */
+    box-sizing: border-box; /* Borda e padding não aumentam o tamanho real do elemento */
+}
+
+body {
+    font-family: 'Lufga', sans-serif; /* Define fonte para todo o corpo */
+    background-color: var(--bg-body); /* Aplica cor de fundo grafite */
+    color: var(--text-light); /* Define cor do texto clara */
+    line-height: 1.6; /* Melhora a legibilidade com espaçamento */
+}
+
+/* --- Cabeçalho e Logo Estilizada (adaptado da Sorveteria) --- */
+header {
+    background-color: var(--dark); /* Fundo escuro */
+    color: white; /* Texto do cabeçalho em branco */
+    padding: 2rem; /* Espaçamento interno generoso */
+    text-align: center; /* Centraliza textos */
+    display: flex; /* Habilita flexbox */
+    flex-direction: column; /* Empilha logo e texto um sobre o outro */
+    justify-content: center; /* Centro vertical */
+    align-items: center; /* Centro horizontal */
+    border-bottom: 4px solid var(--primary); /* Barra vermelha grossa na base */
+    box-shadow: 0 4px 15px rgba(179, 0, 0, 0.3); /* Sombra vermelha sutil */
+}
+
+.logo-img {
+    width: 100px; /* Largura da logo central */
+    height: auto; /* Altura automática proporcional */
+    margin-bottom: 0.5rem; /* Distância para o texto abaixo */
+}
+
+.logo-text {
+    display: flex; /* Organiza partes do texto logo */
+    align-items: center; /* Centro vertical */
+    justify-content: center; /* Centro horizontal */
+    font-family: 'Lufga', sans-serif; /* Fonte padrão */
+    font-size: 3rem; /* Tamanho grande para destaque do Hub */
+    letter-spacing: -2px; /* Letras mais próximas para estilo moderno */
+    text-transform: uppercase; /* Tudo em maiúsculo */
+    color: var(--text-light); /* Cor clara */
+    margin-bottom: 0.5rem; /* Distância para o slogan */
+}
+
+.red-text {
+    color: var(--primary); /* Parte do texto em vermelho */
+    font-weight: bold; /* Negrito */
+    text-shadow: 0 0 10px rgba(179, 0, 0, 0.7); /* Brilho neon na cor primária */
+}
+
+.slogan {
+    font-size: 1.2rem; /* Tamanho médio para o slogan */
+    color: #888; /* Cor cinza desbotada */
+    font-style: italic; /* Texto inclinado */
+}
+
+/* --- Seções e Container --- */
+.container {
+    padding: 4rem 10%; /* Espaço superior/inferior e respiro lateral */
+    text-align: center; /* Centraliza o conteúdo da seção */
+    max-width: 1200px; /* Largura máxima da grade de cards */
+    margin: 4rem auto; /* Centraliza o bloco na horizontal com margem externa */
+}
+
+h2 {
+    font-family: 'Lufga', sans-serif; /* Fonte padrão */
+    font-weight: 900; /* Super negrito */
+    color: var(--primary); /* Título em vermelho */
+    font-size: 2.8rem; /* Tamanho de título principal */
+    margin-bottom: 2.5rem; /* Distância para a grade abaixo */
+    text-transform: uppercase; /* Título em maiúsculo */
+    border-bottom: 2px solid var(--bg-card); /* Linha divisória fina */
+    display: inline-block; /* Linha limitada à largura do texto */
+    padding-bottom: 10px; /* Espaço entre texto e linha */
+    text-shadow: var(--neon-glow); /* Aplica brilho neon definido no root */
+}
+ 
+/* --- Hub Grid e Cards --- */
+.hub-grid {
+    display: grid; /* Ativa sistema de grade flexível */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas automáticas responsivas */
+    gap: 30px; /* Espaço entre os cards */
+    margin-top: 3rem; /* Distância do título h2 */
+}
+
+.hub-card {
+    background: var(--bg-card); /* Fundo cinza um pouco mais claro */
+    padding: 25px; /* Espaçamento interno */
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra suave de profundidade */
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; /* Animação suave para 3 propriedades */
+    border: 1px solid #4a4a4a; /* Borda cinza discreta */
+    text-decoration: none; /* Remove o sublinhado azul padrão de links */
+    color: var(--text-light); /* Cor do texto herdada do root */
+    display: flex; /* Habilita flexbox interno */
+    flex-direction: column; /* Alinha itens (img, h3, p) em coluna */
+    align-items: center; /* Centraliza itens horizontalmente */
+    text-align: center; /* Centraliza textos */
+}
+
+.hub-card:hover {
+    transform: translateY(-10px); /* Move o card para cima ao passar o mouse */
+    box-shadow: 0 10px 25px rgba(179, 0, 0, 0.6); /* Sombra fica maior e vermelha no hover */
+    border-color: var(--primary); /* Borda fica vermelha no hover */
+}
+
+.hub-card img {
+    width: 100%; /* Imagem preenche largura do card */
+    max-width: 250px; /* Não deixa a imagem ficar grande demais */
+    height: 180px; /* Altura fixa para manter todos os cards iguais */
+    object-fit: cover; /* Corta imagem para caber no espaço sem esticar */
+    border-radius: 10px; /* Cantos arredondados na imagem */
+    border: 2px solid var(--primary); /* Borda vermelha na imagem */
+    margin-bottom: 1rem; /* Distância da imagem para o título */
+    transition: border-color 0.3s; /* Suaviza troca de cor da borda no hover */
+}
+
+.hub-card:hover img {
+    border-color: var(--pink-dark); /* Borda da imagem muda de tom no hover do card */
+}
+
+.hub-card h3 {
+    color: var(--primary); /* Título do card em vermelho */
+    font-weight: 900; /* Super negrito */
+    font-size: 1.8rem; /* Tamanho médio-grande */
+    margin-bottom: 0.5rem; /* Distância para o texto abaixo */
+}
+
+.hub-card p {
+    font-size: 1rem; /* Tamanho padrão de parágrafo */
+    color: #ccc; /* Cor cinza médio clara */
+}
+
+/* --- Rodapé (adaptado da Sorveteria) --- */
+footer {
+    background-color: var(--dark); /* Define a cor de fundo escura do rodapé */
+    color: #888; /* Define a cor do texto dos créditos como cinza */
+    text-align: center; /* Centraliza todo o conteúdo textual */
+    padding: 2rem; /* Espaçamento interno de 32px */
+    margin-top: 4rem; /* Cria uma distância de 64px do conteúdo acima */
+    border-top: 2px solid var(--bg-card); /* Adiciona uma linha divisória no topo do rodapé */
+}
+
+.redes-sociais {
+    margin-top: 15px; /* Espaço entre o texto de copyright e os links sociais */
+}
+
+.redes-sociais a {
+    color: var(--primary); /* Links das redes sociais usam o vermelho principal */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    margin: 0 12px; /* Espaçamento lateral entre os links */
+    font-weight: bold; /* Deixa o texto dos links em negrito */
+    font-size: 1rem; /* Define o tamanho da fonte */
+    transition: color 0.3s; /* Suaviza a mudança de cor ao passar o mouse */
+}
+
+.redes-sociais a:hover {
+    color: white; /* Muda a cor do link para branco quando o mouse está em cima */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem; /* Diminui o preenchimento do cabeçalho em telas menores */
+    }
+
+    .logo-img {
+        width: 80px; /* Reduz o tamanho da imagem da logo no celular */
+    }
+
+    .logo-text {
+        font-size: 2.2rem; /* Diminui o título da logo para não quebrar a tela */
+    }
+
+    .slogan {
+        font-size: 1rem; /* Diminui o texto do slogan */
+    }
+
+    .container {
+        padding: 2rem 5%; /* Reduz o espaçamento lateral para aproveitar mais a tela do celular */
+        margin: 2rem auto; /* Diminui a margem vertical */
+    }
+
+    h2 {
+        font-size: 2rem; /* Reduz o tamanho dos títulos das seções */
+        margin-bottom: 1.5rem; /* Diminui o espaço abaixo do título */
+    }
+
+    .hub-grid {
+        grid-template-columns: 1fr; /* Muda de várias colunas para apenas uma (lista vertical) */
+        gap: 20px; /* Diminui o espaço entre os cards */
+    }
+
+    .hub-card {
+        padding: 20px; /* Reduz o preenchimento interno dos cards */
+    }
+
+    .hub-card img {
+        max-width: 200px; /* Limita o tamanho da imagem no mobile */
+        height: 150px; /* Ajusta a altura da imagem */
+    }
+
+    .hub-card h3 {
+        font-size: 1.5rem; /* Diminui o título do card */
+    }
+
+    .redes-sociais a {
+        margin: 0 8px; /* Diminui o espaço entre os links das redes sociais */
+        font-size: 0.9rem; /* Diminui um pouco a letra dos links */
+    }
+}

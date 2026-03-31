@@ -1,0 +1,546 @@
+/* c:\Users\gabriel.fmomo\Desktop\visual\atvis\jogos\style.css */
+@import url('https://fonts.cdnfonts.com/css/lufga');
+
+/* Reset global e fontes */
+* {
+    margin: 0; /* Remove espaços externos automáticos */
+    padding: 0; /* Remove espaços internos automáticos */
+    box-sizing: border-box; /* Borda e padding contidos na largura total */
+    font-family: 'Lufga', sans-serif; /* Fonte padrão do site */
+}
+
+/* Corpo da página - Tema Baseado no Uniforme da Teto */
+body {
+    background-color: #1a1a1a; /* Cor de fundo: Cinza quase preto */
+    color: #f4f4f4; /* Cor principal do texto: Branco suave */
+    line-height: 1.6; /* Altura da linha para melhorar a leitura */
+}
+
+/* Estilo do Logo - Vermelho Teto */
+.logo {
+    background-color: #262626; /* Fundo cinza escuro */
+    color: #E60012; /* Texto vermelho oficial */
+    font-size: 2.5rem; /* Tamanho do título logo */
+    font-weight: 900; /* Super negrito */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 25px 50px; /* Padding restaurado para o padrão */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 4px; /* Aumenta o espaço entre as letras */
+    text-shadow: 0 0 10px rgba(230, 0, 18, 0.6);
+    border-bottom: 4px solid #E60012; /* Borda inferior vermelha sólida */
+}
+
+.logo img {
+    height: 50px; /* Define uma altura fixa para controlar o tamanho da logo */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+    margin-right: 15px; /* Adiciona um espaço entre a imagem e o texto */
+}
+
+/* Menu de Navegação */
+nav {
+    display: flex; /* Habilita layout flexível */
+    justify-content: center; /* Centraliza os itens do menu horizontalmente */
+    gap: 15px; /* Espaço entre os links */
+    padding: 15px; /* Espaçamento interno ao redor do menu */
+    background-color: #2d2d2d; /* Fundo: Cinza do uniforme */
+    border-bottom: 2px solid #444; /* Linha sutil separando o menu do conteúdo */
+} 
+
+/* Botão Hub no Header */
+.btn-hub-fixed {
+    position: fixed; /* Mantém o botão parado na tela mesmo ao rolar a página */
+    bottom: 30px; /* Define a distância de 30px em relação à borda inferior */
+    right: 30px; /* Define a distância de 30px em relação à borda direita */
+    width: 60px; /* Define a largura fixa do botão */
+    height: 60px; /* Define a altura fixa do botão */
+    background-color: #E60012; /* Cor de fundo vermelha (Padrão Teto) */
+    color: #fff; /* Cor branca para o conteúdo interno */
+    border-radius: 12px; /* Arredonda os cantos do botão */
+    display: flex; /* Habilita o Flexbox para alinhar o ícone */
+    align-items: center; /* Centraliza o ícone verticalmente */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    text-decoration: none; /* Remove o sublinhado de link */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Adiciona uma sombra escura de profundidade */
+    z-index: 10000; /* Garante que o botão fique acima de qualquer outro elemento */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação suave com efeito "elástico" */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Adiciona uma borda branca quase transparente */
+}
+
+.btn-hub-fixed img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do botão */
+    height: 100%; /* Faz a imagem ocupar toda a altura do botão */
+    object-fit: contain; /* Garante que o ícone não seja cortado ou esticado */
+    padding: 5px; /* Adiciona um respiro interno para o ícone não tocar na borda */
+}
+
+.btn-hub-fixed:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão em 10% ao passar o mouse */
+    background-color: #FFD700; /* Muda a cor de fundo para amarelo (Destaque Teto) */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); /* Adiciona um brilho amarelo no hover */
+}
+
+nav a {
+    color: #fff; /* Cor do texto do link: Branco */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: 400; /* Lufga Regular */
+    padding: 10px 20px; /* Área clicável do link */
+    border-radius: 4px; /* Bordas levemente arredondadas */
+    transition: all 0.3s ease; /* Suaviza as mudanças de estado (hover) */
+    text-transform: uppercase; /* Texto em caixa alta */
+    font-size: 0.9rem; /* Tamanho da fonte */
+    border-left: 0px solid #FFD700; /* Borda lateral invisível (prepara animação) */
+}
+
+nav a:hover {
+    background-color: #E60012; /* Fundo muda para vermelho ao passar o mouse */
+    color: #fff; /* Mantém texto branco */
+    transform: translateY(-2px); /* Efeito de elevação leve */
+    border-left: 5px solid #FFD700; /* Aparece borda amarela na esquerda (Detalhe Teto) */
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo central */
+    margin: 50px auto; /* Margem vertical e centralização horizontal */
+    padding: 0 20px; /* Margem interna lateral para telas menores */
+}
+
+h2 {
+    text-align: center; /* Centraliza o título da seção */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    font-weight: 900; /* Lufga Black */
+    font-size: 2rem; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+    text-transform: uppercase; /* Caixa alta */
+}
+
+/* Detalhe embaixo do título */
+h2::after {
+    content: '04'; /* Adiciona o número 04 (Referência à personagem) */
+    display: block; /* Comporta-se como um bloco */
+    font-size: 0.8rem; /* Tamanho pequeno para o número */
+    color: #E60012; /* Cor do número */
+    width: 60px; /* Largura da linha decorativa */
+    height: 4px; /* Altura da linha */
+    background-color: #E60012; /* Cor da linha: Vermelho */
+    margin: 10px auto 0; /* Centraliza a linha abaixo do texto */
+    border-radius: 2px; /* Arredonda as pontas da linha */
+}
+
+/* Grid Responsivo de Jogos */
+.grid-jogos {
+    display: grid; /* Define layout em grade */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Colunas flexíveis e responsivas */
+    gap: 30px; /* Espaço entre os itens da grade */
+}
+
+/* Cartão do Jogo */
+.card-jogo {
+    background-color: #262626; /* Fundo do card de jogo */
+    border-radius: 12px; /* Cantos arredondados */
+    overflow: hidden; /* Esconde o que sai dos cantos arredondados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave para hover */
+    border: 1px solid #444; /* Borda sutil cinza */
+}
+
+.card-jogo:hover {
+    transform: translateY(-10px); /* Move o cartão para cima */
+    box-shadow: 0 15px 30px rgba(230, 0, 18, 0.2); /* Sombra difusa vermelha */
+    border-color: #ffd700; /* Cor da borda muda para amarelo (destaque) */
+}
+
+/* Placeholder da Capa - Gradiente com cores da Teto */
+.capa-jogo {
+    height: 200px; /* Altura fixa para a área da imagem */
+    background: linear-gradient(135deg, #E60012, #400006); /* Gradiente vermelho */
+    display: flex; /* Flexbox para centralizar o texto placeholder */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    color: rgba(255, 255, 255, 0.7); /* Texto branco semi-transparente */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+.capa-jogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-jogo {
+    padding: 25px; /* Espaçamento interno das informações */
+    text-align: center; /* Alinha texto ao centro */
+    display: flex; /* Flexbox para layout vertical */
+    flex-direction: column; /* Organiza elementos em coluna */
+}
+
+.titulo-jogo {
+    font-size: 1.4rem; /* Tamanho da fonte do nome do jogo */
+    margin-bottom: 10px; /* Distância para o preço abaixo */
+    font-weight: 900; /* Estilo Black (mais grosso) */
+    color: #fff; /* Cor do texto: Branco */
+}
+
+.preco {
+    display: block; /* Ocupa linha inteira */
+    font-size: 1.5rem; /* Tamanho de fonte destacado */
+    color: #FFD700; /* Cor: Amarelo (destaque de preço) */
+    font-weight: bold; /* Negrito */
+    margin-bottom: 20px; /* Espaço antes do botão */
+}
+
+/* Botão de Compra - Estilo "Drill" */
+.btn-comprar {
+    display: inline-block; /* Comporta-se como botão */
+    background-color: transparent; /* Fundo transparente */
+    color: #E60012; /* Texto vermelho */
+    padding: 10px 25px; /* Tamanho do botão */
+    border: 2px solid #E60012; /* Borda vermelha sólida */
+    border-radius: 5px; /* Bordas levemente arredondadas */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 700; /* Negrito forte */
+    text-transform: uppercase; /* Caixa alta */
+    transition: all 0.3s; /* Transição suave para hover */
+}
+
+.btn-comprar:hover {
+    background-color: #E60012; /* Fundo preenchido com vermelho */
+    color: #fff; /* Texto muda para branco */
+    box-shadow: 0 0 20px rgba(230, 0, 18, 0.5); /* Efeito de brilho externo */
+}
+
+/* Rodapé */
+footer {
+    margin-top: 80px; /* Afastamento superior do conteúdo */
+    padding: 30px; /* Espaçamento interno */
+    background-color: #111; /* Fundo escuro */
+    text-align: center; /* Texto centralizado */
+    color: #888; /* Texto cinza discreto */
+    font-size: 0.9rem; /* Fonte levemente menor */
+    border-top: 3px solid #E60012; /* Borda superior vermelha (Teto) */
+}
+
+/* Estilos da Página Inicial (index.html) */
+.content {
+    max-width: 900px; /* Limita a largura máxima do bloco de conteúdo central */
+    margin: 80px auto; /* Centraliza na tela com espaço vertical */
+    text-align: center; /* Centraliza texto */
+    padding: 40px; /* Adiciona um espaçamento interno de 40px */
+    background: radial-gradient(circle at center, rgba(230, 0, 18, 0.1) 0%, transparent 70%); /* Fundo com brilho sutil vermelho */
+    border-radius: 20px; /* Arredonda os cantos do bloco em 20px */
+}
+
+.content h1 {
+    font-size: 3rem; /* Define um tamanho de fonte bem grande para o título principal */
+    color: #fff; /* Define a cor do texto como branco */
+    font-weight: 900; /* Lufga Black */
+    margin-bottom: 20px; /* Adiciona um espaço de 20px abaixo do título */
+    text-transform: uppercase; /* Transforma todo o texto em letras maiúsculas */
+    text-shadow: 0 0 20px rgba(230, 0, 18, 0.8); /* Cria um brilho neon vermelho atrás das letras */
+}
+
+.content p {
+    font-size: 1.3rem; /* Define um tamanho de fonte médio para o parágrafo */
+    color: #ccc; /* Define a cor do texto como cinza claro */
+    line-height: 1.8; /* Aumenta o espaço entre as linhas para facilitar a leitura */
+}
+
+/* Banner Destaque Grande */
+.banner-destaque {
+    background-color: #262626; /* Define a cor de fundo cinza escuro para o banner */
+    border-radius: 12px;
+    overflow: hidden; /* Garante que a imagem não saia das bordas arredondadas */
+    margin-bottom: 50px;
+    border: 1px solid #444;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra mais forte para destaque */
+}
+
+.banner-img {
+    width: 100%;
+    height: 450px; /* Altura fixa para o banner ficar grande */
+    border-bottom: 4px solid #E60012;
+}
+
+.banner-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir todo o espaço sem distorcer */
+    object-position: center;
+}
+
+.banner-info {
+    padding: 30px; /* Espaçamento interno das informações do banner */
+    text-align: center; /* Centraliza o conteúdo textual */
+    display: flex; /* Habilita layout flexível */
+    flex-direction: column; /* Organiza itens em coluna vertical */
+    align-items: center; /* Centraliza itens horizontalmente */
+    gap: 15px; /* Espaço entre título, preço e botão */
+}
+
+.wrapper-preco {
+    display: flex; /* Coloca preço antigo e desconto lado a lado */
+    align-items: center; /* Alinha os dois verticalmente */
+    gap: 10px; /* Espaço entre o preço riscado e o desconto */
+}
+
+.preco-riscado {
+    text-decoration: line-through; /* Cria a barra na frente do número (efeito de preço antigo) */
+    color: #888; /* Cor cinza apagada/desbotada */
+    font-size: 1.2rem; /* Tamanho médio */
+}
+
+.badge-desconto {
+    background-color: #E60012; /* Fundo vermelho para destaque */
+    color: #fff; /* Letra branca */
+    padding: 3px 8px; /* Espaço em volta do texto do desconto */
+    border-radius: 5px; /* Cantos levemente redondos */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 0.9rem; /* Tamanho da fonte do badge */
+}
+
+.preco-grande {
+    font-size: 3rem; /* Preço principal bem grande */
+    color: #FFD700; /* Destaque em amarelo/ouro */
+    font-weight: 800; /* Super negrito */
+    line-height: 1; /* Reduz altura da linha para o preço riscado ficar próximo */
+}
+
+.btn-grande {
+    padding: 15px 50px; /* Aumenta a área de clique do botão */
+    font-size: 1.2rem; /* Letra maior para o botão principal */
+}
+
+/* --- Sistema de Carrinho --- */
+
+/* Botão Flutuante do Carrinho */
+.btn-cart-fixed {
+    position: fixed;
+    bottom: 100px; /* Acima do botão Hub */
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffd700;
+    color: #1a1a1a;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+}
+
+.btn-cart-fixed:hover {
+    transform: scale(1.1);
+    background-color: #E60012;
+    color: #fff;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #E60012;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 2px solid #ffd700;
+}
+
+/* Janela do Carrinho (Sidebar) */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* Escondido por padrão */
+    z-index: 20000;
+    justify-content: flex-end;
+}
+
+.cart-window {
+    width: 100%;
+    max-width: 400px;
+    background: #262626;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid #E60012;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    animation: slideInRight 0.4s ease-out;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+.cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 3px solid #ffd700;
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart-item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #444;
+}
+
+.btn-remove {
+    background: #E60012;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.cart-footer {
+    border-top: 2px solid #444;
+    padding-top: 20px;
+}
+
+.btn-clear-cart {
+    background: none;
+    border: 1px solid #555;
+    color: #888;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-clear-cart:hover {
+    border-color: #E60012;
+    color: #E60012;
+    background: rgba(230, 0, 18, 0.1);
+}
+
+.total-price {
+    font-size: 1.5rem;
+    color: #ffd700;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 15px;
+    background: #E60012;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    display: block;
+    transition: 0.3s;
+}
+
+.btn-close-cart {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Animação de sacudida para o ícone do carrinho */
+@keyframes shake-cart {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2) rotate(-15deg); }
+    50% { transform: scale(1.2) rotate(15deg); }
+    75% { transform: scale(1.2) rotate(-15deg); }
+    100% { transform: scale(1); }
+}
+
+.shake-anim {
+    animation: shake-cart 0.5s ease-in-out;
+}
+
+/* --- Sistema de Notificações (Toasts) --- */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 30000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background: #262626;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    border-left: 5px solid #E60012;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    font-weight: bold;
+    animation: toast-in 0.5s ease forwards, toast-out 0.5s ease 2.5s forwards;
+}
+
+@keyframes toast-in {
+    from { transform: translateX(-110%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes toast-out {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-110%); opacity: 0; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+/* Classe para animar a saída */
+.cart-window.closing {
+    animation: slideOutRight 0.4s ease-in forwards;
+}
+
+@keyframes slideOutRight {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}

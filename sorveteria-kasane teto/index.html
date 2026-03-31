@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teto's Drill Gelato | Quimera Sweets</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../img-geral/teto-movel.png" type="image/gif">
+
+</head>
+<body>
+    <a href="../index.html" class="btn-hub-fixed" title="Voltar ao Hub"><img src="../img-geral/teto-movel.png" alt="Hub"></a>
+
+    <header>
+        <div class="logo-container">
+            <h1  class="logo-text"> <img  class="logo-img" src="../img-geral/teto-logo.png" alt="Logo Teto's Drill Gelato">Teto's Drill <span class="red-text">Gelato</span></h1>
+            <p class="slogan">O sabor que perfura os céus!</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">A Quimera</a></li>
+                <li><a href="#sabores">Sabores</a></li>
+                <li><a href="#galeria">Taças</a></li>
+                <li><a href="#midia">Sinfonia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre" class="container">
+            <h2>Nossa História</h2>
+            <div class="sobre-content">
+                <p><strong>Na Teto's Drill Gelato</strong> a tradição do gelato artesanal encontra a energia da cultura <strong>UTAU</strong>. Criamos sabores "Sintetizados" que desafiam o comum, com uma textura moldada na perfeição de uma broca helicoidal. É técnico, é artístico e, acima de tudo, surpreendente. O sabor de uma quimera em cada colherada.</p>
+            </div>
+        </section>
+
+        <section id="sabores" class="container">
+            <h2>Sabores Sintetizados (Menu)</h2>
+            <div class="cards-grid">
+                <article class="card"> 
+                    <button class="fullscreen-btn" onclick="abrirModal(this)">Tela Cheia</button>
+                    <img src="../img-geral/morango.png" alt="Sorvete Red Drill">
+                    <h3>Red Drill Velvet</h3>
+                    <p>Base de baunilha artesanal misturada com pedaços de bolo Red Velvet e calda de frutas vermelhas "0401".</p>
+                </article>
+
+                <article class="card">
+                    <button class="fullscreen-btn" onclick="abrirModal(this)">Tela Cheia</button>
+                    <img src="../img-geral/choco.png" alt="Sorvete Chimera Dark">
+                    <h3>Chimera Dark Chocolate</h3>
+                    <p>Chocolate belga 80% cacau, com infusão de pimenta caiena sutil e lascas de chocolate preto.</p>
+                </article>
+                
+                <article class="card">
+                    <button class="fullscreen-btn" onclick="abrirModal(this)">Tela Cheia</button>
+                    <img src="../img-geral/uva.png" alt="Sorvete casquinha de uva">
+                    <h3>Casquinha de Uva</h3>
+                    <p>Uma casquinha de uva fresca, com calda de frutas vermelhas "0401".</p>
+                </article>
+
+                <article class="card">
+                    <button class="fullscreen-btn" onclick="abrirModal(this)">Tela Cheia</button>
+                    <img src="../img-geral/verde.png" alt="Sorvete Synth Wave">
+                    <h3>Synth Matcha Wave</h3>
+                    <p>Chá verde matcha premium sintetizado em um gelato cremoso, com toque de mochi de arroz.</p>
+                </article>
+
+                <article class="card">
+                    <button class="fullscreen-btn" onclick="abrirModal(this)">Tela Cheia</button>
+                    <img src="../img-geral/bagete.png" alt="Sorvete Baguette Dream">
+                    <h3>Baguette Dream</h3>
+                    <p>Uma homenagem: gelato de creme com infusão de pão francês tostado e caramelo salgado.</p>
+                </article>
+
+                <article class="card">
+                    <button class="fullscreen-btn" onclick="abrirModal(this)">Tela Cheia</button>
+                    <img src="../img-geral/cas morango.png" alt="Sorvete casquinha de morango">
+                    <h3>Casquinha de Morango</h3>
+                    <p>Uma casquinha de morango fresco, com calda de frutas vermelhas "0401".</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="galeria" class="container">
+            <h2>Mural da Quimera</h2>
+            <div class="galeria-grid">
+                <figure>
+                    <img src="../img-geral/banana.png" alt="Banana Teto's" onclick="abrirModal(this)">
+                    <figcaption>Nosso espaço Synth-Tech</figcaption>
+                </figure>
+                <figure>
+                    <img src="../img-geral/taça.png" alt="Taça Especial" onclick="abrirModal(this)">
+                    <figcaption>A taça "Infinite Drill"</figcaption>
+                </figure>
+                <figure>
+                    <img src="../img-geral/sitentizado.png" alt="Sintetizado" onclick="abrirModal(this)">
+                    <figcaption>Sintetizando amor</figcaption>
+                </figure>
+                <figure>
+                    <img src="../img-geral/bola branca.png" alt="Bola Branca Teto's" onclick="abrirModal(this)">
+                    <figcaption>Nosso espaço Synth-Tech</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="midia" class="container">
+            <h2>Sinfonia Capilar</h2>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TC80uw4HgCw?autoplay=1&mute=1&loop=1&playlist=TC80uw4HgCw" title="Kasane Teto Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+<footer id="contato">
+    <p>&copy; 2026 - Sintetizado por Gabriel - Número de Série 0401</p>
+
+    <div class="redes-sociais">
+        <a href="https://www.youtube.com/channel/UCDsaRDKTCsGBJMUKx-KtukA" target="_blank">YouTube</a> | <a href="https://github.com/dashboard" target="_blank">GitHub</a> | <a href="../BIO-kasane teto/index.html" target="_blank">Kasane Teto LOVERS</a>| <a href="../jogos/index.html" target="_blank">Teto Store</a>
+    </div>
+
+    <img src="../img-geral/teto-movel.png" class="teto-footer" alt="Kasane Teto Pixel Art">
+</footer>
+
+<div id="modal-container" class="modal-overlay" onclick="fecharModal()">
+    <img id="img-modal" src="" alt="Imagem Ampliada" onclick="event.stopPropagation()">
+    <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;" onclick="fecharModal()">&times;</span>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
