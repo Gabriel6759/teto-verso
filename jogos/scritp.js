@@ -53,6 +53,32 @@ function showToast(message) {
     setTimeout(() => { toast.remove(); }, 3000);
 }
 
+// Função para abrir detalhes do jogo
+function openGameModal(name, price, image, description, tags, rating) {
+    document.getElementById('modal-game-title').innerText = name;
+    document.getElementById('modal-game-img').src = image;
+    document.getElementById('modal-game-description').innerText = description;
+    document.getElementById('modal-game-tags').innerText = tags;
+    document.getElementById('modal-game-price').innerText = `R$ ${price.toFixed(2).replace('.', ',')}`;
+    
+    // Gera as estrelas
+    const starsContainer = document.getElementById('modal-game-stars');
+    starsContainer.innerHTML = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+
+    // Configura o botão de compra dentro do modal
+    const modalBuyBtn = document.getElementById('modal-buy-btn');
+    modalBuyBtn.onclick = () => {
+        addToCart(name, price, image);
+        closeGameModal();
+    };
+
+    document.getElementById('game-modal-overlay').style.display = 'flex';
+}
+
+function closeGameModal() {
+    document.getElementById('game-modal-overlay').style.display = 'none';
+}
+
 // Adicionar ao Carrinho
 function addToCart(name, price, image) {
     const exists = cart.some(item => item.name === name);

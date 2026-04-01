@@ -29,7 +29,7 @@
 <div class="container">
     <h2>Promoções da Semana</h2>
     
-    <div class="banner-destaque">
+    <div class="banner-destaque" onclick="openGameModal('Teto Racing Cross Baguette', 1.90, '../img-geral/cross-baguette.png', 'O simulador de corrida definitivo onde a velocidade encontra a tradição das baguetes francesas.', '#Corrida #Simulador #Meme', 5)">
         <div class="banner-img">
             <img src="../img-geral/cross-baguette.png" alt="Jogo em Destaque">
         </div>
@@ -44,6 +44,24 @@
         </div>
     </div>
 
+</div>
+
+<!-- Modal de Detalhes do Jogo -->
+<div class="game-modal-overlay" id="game-modal-overlay" onclick="if(event.target == this) closeGameModal()">
+    <div class="game-modal-window">
+        <button class="btn-close-modal" onclick="closeGameModal()">&times;</button>
+        <div class="game-modal-content">
+            <img id="modal-game-img" class="modal-img" src="" alt="">
+            <div class="game-modal-info">
+                <h2 id="modal-game-title">Nome do Jogo</h2>
+                <div id="modal-game-stars" class="stars"></div>
+                <p id="modal-game-description" class="description">Descrição aqui...</p>
+                <div id="modal-game-tags" class="tags">#Tags #Aqui</div>
+                <span id="modal-game-price" class="preco-grande">R$ 0,00</span><br><br>
+                <button id="modal-buy-btn" class="btn-comprar btn-grande">Comprar Agora</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Estrutura da Janelinha do Carrinho -->

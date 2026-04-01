@@ -142,7 +142,7 @@ h2 {
 /* --- Card de fundo --- */
 .sobre-content {
     max-width: 2000px;                    /* Limite máximo de largura */
-    height: 400px;                        /* Altura fixa da seção sobre */
+    min-height: 400px;                    /* Alterado para min-height para permitir que o box cresça com o texto em telas menores */
     margin: 0 auto;                       /* Centralização horizontal */
     text-align: justify;                  /* Distribui o texto para alinhar nas duas margens */
     background-color: #3d3d3d;            /* Fundo cinza um pouco mais claro que o body */
@@ -154,7 +154,7 @@ h2 {
 .sobre-content p {
     color: #e0e0e0;                       /* Texto em cinza claro */
     font-weight: normal;                  /* Fonte com peso comum */
-    font-size: 1.7rem;                    /* Fonte grande para leitura fácil */
+    font-size: 1.8rem;                    /* Reduzido levemente para evitar quebras bruscas antes do modo mobile */
 }
 
 /* --- Sabores (Grid) --- */
